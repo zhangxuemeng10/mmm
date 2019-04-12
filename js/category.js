@@ -1,36 +1,54 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-11-23 23:23:00
- * @Last Modified by:   zhengwei
- * @Last Modified time: 2016-11-25 18:55:03
- */
+$(function(){
 
-'use strict';
-$(function() {
-    setCategoryTitle();
-    function setCategoryTitle() {
-        $.ajax({
-            url: "http://193.112.55.79:9090/api/getcategorytitle",
-            success: function(data) {
-                var html = template("categoryTitleTmp", data);
-                $("#category > .panel-group").html(html);
-                var categoryTitle = $("#category > .panel-group > .panel-default > .panel-heading > h4 > a");
-                categoryTitle.on("click", function(e) {
-                    var titleId = $(this).data("titleid");
-                    // var titleId = $(this).attr("data-titleid");
-                    $.ajax({
-                        url: "http://193.112.55.79:9090/api/getcategory?titleid=" + titleId,
-                        success: function(data) {
-                            var html = template("categoryTmp", data);
-                            var panelBody = $(e.target).parent().parent().parent().find(".panel-collapse").find('.panel-body');
-                            panelBody.html(html);
-                            var categoryList = panelBody.find('.row > div');
-                            var count = categoryList.length % 3 || 3;
-                            panelBody.find(".row > div:nth-last-child(-n+" + count + ")").css("border-bottom", "0");
-                        }
-                    })
-                });
-            }
-        })
-    }
+
+  render();
+
+// 获取大标题
+  var titleId
+  function render (){
+    $.ajax({
+        type:'get',
+      url:'http://193.112.55.79:9090/api/getcategorytitle',
+        dataType:'json',
+        success:function(result){
+          console.log(result);
+          var html = template('headerTemp',result)
+          $('#category > .panel-group').html(html)
+
+          // 点击a连接的时候，将商品详细信息 渲染到页面
+          $('#category > .panel-group > .panel-default > .panel-heading > h4 > a').on('tap',function(e){
+             titleId = $(this).attr('data-titleId');
+            console.log(titleId);
+            
+            // 获取列表内容
+            $.ajax({
+              type: 'get',
+              url: "http://193.112.55.79:9090/api/getcategory?titleid=" + titleId,
+              data: titleId,
+              dataType: 'json',
+              success: function (result) {
+                console.log(result);
+                /* 寻找点击元素的panel-body的标签 */
+                var panelBody = $(e.target).parent().parent().parent().find(".panel-collapse").find('.panel-body');
+                var listHtml = template('listTemp',result)
+                panelBody.html(listHtml)
+                
+                var categoryList = panelBody.find('.row > div');
+
+               
+
+
+                var count = categoryList.length % 3 || 3;
+                panelBody.find(".row > div:nth-last-child(-n+" + count + ")").css("border-bottom", "0");
+               
+              }
+            })
+           
+          })
+        }
+    })
+    // 手动激活折叠
+    //$('.collapse').collapse() 
+    $('.collapse').collapse('toggle')
+  } 
 })
