@@ -1,157 +1,65 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-24 22:14:54
- * @Last Modified by:   zhengwei
- * @Last Modified time: 2016-11-28 21:23:36
- */
-
-'use strict';
-$(function() {
-    // getDiscountProduct();
-
-    // function getDiscountProduct() {
-    //     $.ajax({
-    //         url: "http://mmb.ittun.com/api/getinlanddiscount",
-    //         success: function(data) {
-    //             var html = template("discountProductTmp", data);
-    //             $('.inland-discount-list').html(html);
-    //             $('.loading').hide();
-    //         }
-    //     })
-    // }
-    var i = 0;
-    var data1 = {};
-    var resultLength = 0;
-    $.ajax({
-        url: "http://193.112.55.79:9090/api/getinlanddiscount",
-        success: function(data) {
-            data1 = data;
-            var newdata = {
-                "result": []
-            };
-            for (i = 0; i < 4; i++) {
-                newdata.result.push(data.result[i])
-            }
-            // console.log(newdata);
-            var html = template("discountProductTmp", newdata);
-            $('.inland-discount-list').html(html);
-            height = $('.inland-discount-list').height() - $(document.body).height();
-            console.log(height);
-            resultLength = data.result.length;
-            $('.loading').hide();
-        }
+$(function () {
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
     });
-    /**
-     * 1. 滚动条滚动到底部的时候加载下一页数据
-     * 2. 什么时候才知道滚动到了底部 需要获取滚动条的距离去做判断
-     * 3. 获取滚动条的距离上面的距离  每次滚动的时候都要获取距离 添加滚动事件
-     * 4. 获取到容器 -  整个网页的高度
-     * 5. 判断当 获取到容器 -  整个网页的高度  == 滚动条滚动的距离  加载下一页数据
-     */
-    //滚动条到顶部的距离
-    var scrollTop = $(window).scrollTop();
-    // 容器减去网页的高度 因为这个容器的高度的动态的  当加载下一页数据的时候 就会变高
-    var height = $('.inland-discount-list').height() - $(document.body).height();
-    console.log(height);
-    $(window).on('scroll', function() {
-        // console.log($(window).scrollTop());
-        //每次滚动事件触发都获取一些滚动条的距离赋值给scrollTop
-        scrollTop = $(window).scrollTop();
-        //当 获取到容器高度 -  整个网页的高度  == 滚动条滚动的距离 并且滚动的距离不等于0
-        console.log(scrollTop + "================" + height);
-        if (scrollTop >= height && scrollTop != 0) {
-            //为了等ajax请求完所以给height加的个无限大的值 让这个判断不成立
-            // 加载了下一页数据完成才继续判断 当下一页数据请求完了再恢复正常的高度
-            height = 99999;
-            //到底部了
-            $('.loading').show();
-            $.ajax({
-                url: "http://193.112.55.79:9090/api/getinlanddiscount",
-                success: function(data) {
-                    var newData = {
-                        "result": []
-                    };
-                    if (i >= resultLength) {
-                        $('.loading').hide();
-                        return;
-                    }
-                    // 是获取后4条数据 也就是 5 - 8 条数据
-                    for (var j = i; j < i + 4; j++) {
-                        newData.result.push(data.result[j]);
-                    }
-                    var html = template("discountProductTmp", newData);
-                    $('.inland-discount-list').append(html);
-                    height = $('.inland-discount-list').height() - $(document.body).height();
-                    i = j;
-                    $('.loading').hide();
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+        indicators: false, //是否显示滚动条
+    })
+    init()
+    // 渲染国内折扣商品列表页
+    function init(resut) {
+        $.ajax({
+            type: 'get',
+            url: 'getinlanddiscount',
+            dataType: 'json',
+            success: function (result) {
+                // 渲染折扣商品列表
+                var html = template('mmm_gnzkitem', result)
+                $('.nier ul').html(html)
+                // 判断如果传入函数就进行调用
+                if (resut) {
+                    resut(result)
                 }
-            })
-        }
-    });
-    var i = 0;
-    var data1 = {};
-    var resultLength = 0;
-    $.ajax({
-            url: "http://193.112.55.79:9090/api/getinlanddiscount",
-            success: function(data) {
-                data1 = data;
-                var newdata = {
-                    "result": []
-                };
-                for (i = 0; i < 4; i++) {
-                    newdata.result.push(data.result[i])
-                }
-                // console.log(newdata);
-                var html = template("discountProductTmp", newdata);
-                $('.inland-discount-list').html(html);
-                height = $('.inland-discount-list').height() - $(document.body).height();
-                console.log(height);
-                resultLength = data.result.length;
-                $('.loading').hide();
+                // 点击返回顶部  未完成,应该是mui文件有问题.报错:scrollTo函数不存在
+                // $('.mmm_btndb').on('tap', function () {
+                //     mui('.mui-scroll-wrapper').scroll({
+                //         deceleration: 0.0005, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+                //         indicators: false, //是否显示滚动条
+                //     }).scrollTo(0, 0, 100);//100毫秒滚动到顶
+                // })
             }
+
         })
-        /**
-         * 1. 滚动条滚动到底部的时候加载下一页数据
-         * 2. 什么时候才知道滚动到了底部 需要获取滚动条的距离去做判断
-         * 3. 获取滚动条的距离上面的距离  每次滚动的时候都要获取距离 添加滚动事件
-         * 4. 获取到容器 -  整个网页的高度
-         * 5. 判断当 获取到容器 -  整个网页的高度  == 滚动条滚动的距离  加载下一页数据
-         */
-        //滚动条到顶部的距离
-    var scrollTop = $(window).scrollTop();
-    // 容器减去网页的高度 因为这个容器的高度的动态的  当加载下一页数据的时候 就会变高
-    var height = $('.inland-discount-list').height() - $(document.body).height();
-    console.log(height);
-    $(window).on('scroll', function() {
-        // console.log($(window).scrollTop());
-        //每次滚动事件触发都获取一些滚动条的距离赋值给scrollTop
-        scrollTop = $(window).scrollTop();
-        //当 获取到容器高度 -  整个网页的高度  == 滚动条滚动的距离 并且滚动的距离不等于0
-        // console.log(log);
-        if (scrollTop == height && scrollTop != 0) {
-            //到底部了
-            $('.loading').show();
-            $.ajax({
-                url: "http://193.112.55.79:9090/api/getinlanddiscount",
-                success: function(data) {
-                    var newData = {
-                        "result": []
-                    };
-                    if (i >= resultLength) {
-                        $('.loading').hide();
-                        return;
-                    }
-                    // 是获取后4条数据 也就是 5 - 8 条数据
-                    for (var j = i; j < i + 4; j++) {
-                        newData.result.push(data.result[j]);
-                    }
-                    var html = template("discountProductTmp", newData);
-                    $('.inland-discount-list').append(html);
-                    height = $('.inland-discount-list').height() - $(document.body).height();
-                    i = j;
-                    $('.loading').hide();
+    }
+    // 初始化下拉更新  目前没用.因为总共就几条数据 而且不用传入页数和显示数量
+    mui.init({
+        pullRefresh: {
+            container: "#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+            up: {
+                height: 50,//可选.默认50.触发上拉加载拖动距离
+                auto: false,//可选,默认false.自动上拉加载一次
+                contentrefresh: "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+                contentnomore: '没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+                callback: function () {//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+                    console.log(11);
+                    // init( function (result) {
+                    //     console.log(result);
+                    //     if (result.result.length > 0) {
+                    //         var html = template('mmm_gnzkitem', result)
+                    //         $('.nier ul').append(html)
+                    //         mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+                    //     } else {
+                    mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+                    //     }
+                    // })
+
                 }
-            })
+
+            }
         }
     });
-});
+
+
+
+})
