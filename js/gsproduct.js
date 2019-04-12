@@ -25,7 +25,7 @@ $(function () {
                 $('#showUserPicker').on('tap', function () {
                      // 初始化，layer的值是多少就是几级联动，此方法依赖mui.picker.js/.css mui.poppicker.js/.css
                 var picker = new mui.PopPicker({
-                    layer: 1
+                    layer:3
                 });
                     picker.setData(data)
                 picker.pickers[0].setSelectedIndex(1);
@@ -61,10 +61,10 @@ $(function () {
                 $('#showUserPicker1').on('tap', function () {
                     // 初始化，layer的值是多少就是几级联动，此方法依赖mui.picker.js/.css mui.poppicker.js/.css
                 var picker = new mui.PopPicker({
-                    layer: 1
+                    layer: 3
                 });
-                    联动中选择的数组内容
-                    picker.setData(data)
+                    // 联动中选择的数组内容
+                picker.setData(data)
                 picker.pickers[0].setSelectedIndex(1);
                 picker.pickers[1].setSelectedIndex(1);
                 picker.show(function (items) {
