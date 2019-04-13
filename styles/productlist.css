@@ -1,0 +1,278 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.clearfix::before {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#header {
+  width: 100%;
+  height: 50px;
+  background-color: #ff841d;
+  padding: 0px 10px;
+}
+#header > .logo img {
+  height: 25px;
+  margin-top: 12px;
+}
+#header > .app > img {
+  height: 34px;
+  width: 34px;
+  margin-top: 8px;
+}
+.search {
+  background-color: #fff;
+}
+.search > form {
+  padding: 10px;
+  display: flex;
+}
+.search > form > input:nth-of-type(1) {
+  background-color: #eee;
+  flex: 8;
+  color: #ccc;
+  text-align: left;
+  font-size: 13px;
+  border-radius: 17px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+.search > form > input:nth-of-type(2) {
+  width: 63px;
+  height: 34px;
+  background-color: #ff841d;
+  border-radius: 17px;
+  border: 0;
+}
+.nav {
+  height: 30px;
+  padding: 0 10px;
+  background-color: #eee;
+}
+.nav span {
+  font-size: 13px;
+  line-height: 30px;
+}
+.nav span:nth-of-type(1) > a {
+  color: #333;
+}
+.nav > a {
+  height: 28px;
+  width: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 28px;
+  color: #000;
+}
+#footer {
+  background-color: #fff;
+  width: 100%;
+}
+#footer > .row {
+  height: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+#footer > .row > a {
+  height: 30px;
+  color: #000;
+  font-size: 15px;
+  width: 33.3%;
+  line-height: 30px;
+  text-align: center;
+}
+#footer > .row > a > img {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+#footer > .row > a:nth-of-type(-n+2) {
+  border-right: 1px solid #ccc;
+}
+#footer > p {
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+}
+#footer > p > a {
+  color: red;
+}
+.mmb_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.mmb_content > .productList {
+  flex: 1;
+}
+.mmb_content > .productList > .product {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.mmb_content > .productList .left {
+  flex: 2;
+}
+.mmb_content > .productList .left > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.mmb_content > .productList .left > a img {
+  display: inline-block;
+}
+.mmb_content > .productList .right {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mmb_content > .productList .right > a {
+  font-size: 15px;
+  color: #333;
+}
+.mmb_content > .productList .right > .price {
+  color: red;
+  margin: 10px 0px 20px;
+}
+.mmb_content > .productList .right span {
+  font-size: 12px;
+}
+.mmb_content > .prodocut-option {
+  position: relative;
+  color: #888;
+  border-top: 1px solid #ccc;
+  margin: 0px;
+  padding: 10px 15px ;
+}
+.mmb_content > .prodocut-option .dropdown {
+  height: 32px;
+  width: 78px;
+  text-align: center;
+  line-height: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.mmb_content > .prodocut-option .dropdown > a {
+  color: #333;
+}
+.mmb_content > .prodocut-option .dropdown > a:hover,
+.mmb_content > .prodocut-option .dropdown a:focus {
+  text-decoration: none;
+  color: #333;
+}

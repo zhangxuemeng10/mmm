@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入mui样式 -->
+    <link rel="stylesheet" href="../lib/mui/css/mui.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../lib/swiper/swiper.min.css">
+    <!-- 引入本页样式 -->
+    <link rel="stylesheet" href="../styles/couponproduct.css">
+    <title>优惠券</title>
+</head>
+
+<body class="SwitchStyle">
+    <!-- #f4483e -->
+    <div class="layout">
+        <!-- 页面顶部栏 -->
+        <header id="header" class="mui-bar mui-bar-nav mmm_header">
+            <a href="./coupon.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">肯德基优惠券</h1>
+            <img class="mui-pull-right mmm_header_app" src="../images/header_app.png" alt="">
+        </header>
+        <!-- 页面主体内容 -->
+        <div class="mmm_content">
+            <div class="title">--点餐前出示手机中的优惠券，即可享受优惠--</div>
+            <!--这里放置真实显示的DOM内容-->
+            <ul class="con_ul">
+
+
+            </ul>
+
+            <div id="ctl00_Menu" class="nav">
+                <a href="../index.html">首页</a>&nbsp;&gt;&nbsp;
+                <a href="./coupon.html">优惠券</a>
+            </div>
+        </div>
+        <!-- 页面底部导航 -->
+        <div class="mmm_footer">
+            <div class="nav">
+                <button>登录</button>
+                <button>注册</button>
+                <button class="">返回顶部</button>
+            </div>
+            <div class="footer">
+                <p><a>手机APP下载 <i>慢慢买手机版</i> </a> -- 掌上比价平台</p>
+                <a href="javascript:;">m.manmanbuy.com</a>
+            </div>
+        </div>
+        <!-- 蒙蔽的轮播图 -->
+        <div class="mmm_banner">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper mmm_banner_box">
+
+                </div>
+                <!-- Add Pagination:分页器 -->
+                <div class="swiper-pagination swiper-pagination-white"></div>
+                <!-- Navigation:前进后退按钮 -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- 动态渲染轮播图--图片 -->
+    <script type="text/template" id="bannnerTemp">
+        {{each result value index}}
+            <div class="swiper-slide">
+                <!-- Required swiper-lazy class and image source specified in data-src attribute -->
+                <img data-src="{{value.couponProductImg}}" class="swiper-lazy">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+        {{/each}}
+    </script>
+
+    <!-- 动态渲染优惠券列表 -->
+    <script type="text/template" id="discountCouponTemp">
+        {{each result value index}}
+            <li>
+                <div class="left">
+                    <img src="{{value.couponProductImg}}" alt="">
+                </div>
+                <div class="right">
+                    <p>{{value.couponProductName}}</p>
+                    <div class="price">￥ {{value.couponProductPrice}}</div>
+                    <div class="validity">{{value.couponProductTime}}</div>
+                    <a class="mui-icon mui-icon-arrowright mmm_icon "></a>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+    <!-- 引入muijs -->
+    <script src="../lib/mui/js/mui.min.js"></script>
+    <!-- 引入zepto的js -->
+    <script src="../lib/zepto/zepto.js"></script>
+    <!-- 引入模板引擎js -->
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <!-- 引入iscroll的js -->
+    <script src="../lib/iscroll/iscroll.js"></script>
+    <!-- 引入jqueryjs -->
+    <script src="../lib/jquery/jquery.js"></script>
+    <!-- Swiper JS -->
+    <script src="../lib/swiper/swiper.min.js"></script>
+    <!-- 引入公共js -->
+    <script src="../js/common01.js"></script>
+    <!-- 引入本页js -->
+    <script src="../js/couponproduct.js"></script>
+</body>
+
+</html>

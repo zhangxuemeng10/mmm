@@ -1,0 +1,263 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.clearfix::before {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.layout {
+  width: 100vw;
+  height: 100vh;
+}
+.layout .conde {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.layout .herder {
+  display: flex;
+  border-bottom: 1px solid #444;
+  padding: 10px;
+  background-color: #fff;
+  height: 55px;
+}
+.layout .herder > a {
+  flex: 3;
+  padding-top: 5px;
+}
+.layout .herder > a img {
+  width: 90%;
+  display: block;
+  margin: auto;
+}
+.layout .herder > .mui-input-row {
+  flex: 6;
+  padding: 0 5px;
+}
+.layout .herder > .mui-input-row input {
+  height: 100%;
+  border-radius: 30px;
+  margin: 0;
+  font-size: 13px;
+  padding-left: 30px;
+}
+.layout .herder > .mui-input-row .mmm_ss {
+  position: relative;
+  left: 4px;
+  top: -30px;
+}
+.layout .herder > button {
+  flex: 1;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 15px;
+}
+.layout .wsn {
+  position: relative;
+}
+.layout .wsn .mui-scroll {
+  list-style: none;
+  background-color: #fff;
+}
+.layout .wsn .mui-scroll li {
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+}
+.layout .wsn .mui-scroll li a {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 3px 8px;
+  font-weight: 600;
+  color: #000;
+}
+.layout .wsn .mui-scroll .active {
+  border-bottom: 3px solid red;
+}
+.layout .wsn .mui-scroll .active > a {
+  color: orange;
+}
+.layout .conmen .nier {
+  background-color: #fff;
+}
+.layout .conmen .nier ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.layout .conmen .nier ul li {
+  padding: 10px;
+  width: 50%;
+}
+.layout .conmen .nier ul li a {
+  display: block;
+  width: 100%;
+  padding: 10px 4px;
+}
+.layout .conmen .nier ul li a img {
+  display: block;
+  width: 90%;
+  margin: 10px 4px;
+}
+.layout .conmen .nier ul li a p {
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+}
+.layout .conmen .nier ul li a span:nth-of-type(1) {
+  color: orange;
+  font-size: 14px;
+}
+.layout .conmen .nier ul li a span:nth-of-type(2),
+.layout .conmen .nier ul li a span:nth-of-type(3) {
+  color: #888;
+  font-size: 12px;
+}
+.layout .conmen .nier ul li a span {
+  display: block;
+}
+.layout .conmen .nier ul li:nth-of-type(odd) {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.layout .conmen .nier ul li:nth-of-type(even) {
+  border-bottom: 1px solid #ccc;
+}
+.layout .foor .mmm_shang {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.layout .foor .mmm_shang a {
+  color: #222;
+  font-size: 16px;
+}
+.layout .foor .mmm_zhong {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+.layout .foor .mmm_zhong > div {
+  display: inline-block;
+  padding: 10px;
+}
+.layout .foor .mmm_zhong > div:nth-of-type(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.layout .foor .mmm_xia {
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+.layout .foor .mmm_xia > div a {
+  font-size: 12px;
+  color: red;
+}
+.layout .foor .mmm_xia > div span:nth-of-type(1) {
+  color: #222;
+}
+.layout .foor .mmm_xia > p {
+  font-size: 12px;
+}
+.cif:after {
+  content: "";
+  clear: both;
+  display: block;
+}
