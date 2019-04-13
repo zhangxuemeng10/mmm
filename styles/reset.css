@@ -91,11 +91,17 @@ ol,
 ul {
   list-style: none;
 }
-.clearfix:after {
-  content: "";
+.clearfix::before {
+  content: " ";
   display: block;
   clear: both;
   visibility: hidden;
   height: 0;
   font-size: 0;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
