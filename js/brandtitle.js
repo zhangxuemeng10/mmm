@@ -1,20 +1,14 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-23 15:57:22
- * @Last Modified by:   zhengwei
- * @Last Modified time: 2016-11-29 14:40:29
- */
 
-'use strict';
 $(function() {
-     getBrandTitle();
-    function getBrandTitle() {
+
         $.ajax({
             url: "http://193.112.55.79:9090/api/getbrandtitle",
-            success: function(data) {
-                var html = template("brandTitleTmp", data);
-                $('.brand-title').html(html);
+            success: function(result) {
+                console.log(result);
+                
+                var html = template("brandTitleTmp", result);
+                $('.allbrands').html(html);
             }
         })
-    }
+   
 });

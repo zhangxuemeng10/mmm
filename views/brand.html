@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>品牌排行页</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../lib/mui/css/mui.css">
+    <link rel="stylesheet" href="../styles/brand.css">
+  </head>
+
+  <body>
+    <div class="layout">
+      <header id="header">
+        <a href="#" class="logo mui-pull-left"><img src="../images/header_logo.png" alt=""></a>
+        <a href="#" class="app mui-pull-right"><img src="../images/header_app.png" alt=""></a>
+      </header>
+      <div class="mmm_search">
+        <form action="#">
+          <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+          <input type="search" name="" id="" placeholder="请输入要比价的商品">
+          <input type="submit" value="搜索">
+        </form>
+      </div>
+      <div class="mmm_content">
+        <div class="brandSearchNav">
+          <ol>
+            <li> <a href="../index.html"><span>首页</span> ></a></li>
+            <li><a href="./category.html"><span>全部分类</span> ></a></li>
+            <li><span>品牌大全</span> ></li>
+          </ol>
+        </div>
+        <div class='brandList'>
+          <div class="brandtitle">
+
+
+          </div>
+          <div class='allbrands'>
+
+
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <div class="row">
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+          <a href="#header"><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+        </div>
+        <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+        <p>m.manmanbuy.com </p>
+      </footer>
+    </div>
+
+
+    <script type='text/template' id='brandtitleTemp'>
+          <span >
+            {{brandTitle}}
+          </span>
+      
+    </script>
+    <script type='text/template' id='brandRankTemp'>
+  {{each result v i}}
+
+    <a href='productlist.html?categoryid={{v.categoryId}}pageid=1'class="singerRank">
+              <div class="left">
+                  <span>{{i+1}}</span>
+              </div>
+            
+              <div class="singerbody">
+                <div class="title">
+                 {{v.brandName}}
+                </div>
+                <div class="sale">{{v.brandInfo}}</div>
+       </div>
+   </a>
+
+
+  {{/each}}
+
+
+</script>
+
+
+
+    <script src="../lib/zepto/zepto.js"></script>
+    <script src="../lib/mui/js/mui.js"></script>
+    <script src="../lib/arttemplate/template-web.js"></script>
+    <script src="../js/brand.js"></script>
+
+  </body>
+
+  </html>
+
+
+
+</body>
+
+</html>

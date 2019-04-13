@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>首页</title>
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./lib/mui/css/mui.css">
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+  <div class="layout">
+    <header id="header">
+      <a href="#" class="logo mui-pull-left"><img src="./images/header_logo.png" alt=""></a>
+      <a href="#" class="app mui-pull-right"><img src="./images/header_app.png" alt=""></a>
+    </header>
+    <div class="mmm_search">
+      <form action="#">
+        <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+        <input type="search" name="" id="" placeholder="请输入要比价的商品">
+        <input type="submit" value="搜索">
+      </form>
+    </div>
+    <div class="mmm_content">
+      <div class="mmm_nav">
+
+      </div>
+      <div class="mmm_recommen">
+        <div class="recommen-title">
+          <h5>超值折扣推荐</h5>
+          <img src="images/header_app.png" alt="">
+        </div>
+        <div class="recommen-list">
+
+
+         
+
+        </div>
+        <div class="recommen-more">
+          <a href="#">更多优惠信息&gt;&gt;</a>
+        </div>
+        <div class="recommen-title">
+          <h5>品牌排行</h5>
+          <img src="images/header_app.png" alt="">
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+    <footer id="footer">
+      <div class="row">
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+        <a href="#header"><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+      </div>
+      <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+      <p>m.manmanbuy.com </p>
+    </footer>
+  </div>
+
+  <script type='text/template' id='indexnavTemp'>
+  {{each result value index}}
+     <a href="views/{{value.titlehref}}">
+      {{@value.img}}   
+      <div>{{value.name}}</div>
+     </a>
+  {{/each}}
+  </script>
+
+
+  <script type='text/template' id='recommenlistTemp'>
+  {{each result value index}}
+  <div class="media">
+            <a class="media-left" href="#">
+            
+       {{@value.productImgSm}}
+
+            </a>
+            <div class="media-body">
+              <h5>{{value.productName}}</h5>
+              <p class="price">{{value.productPinkage}}</p>
+              <div class="from">{{value.productFrom}} | {{value.productTime}}
+                  <span class="comment"><i class="icon-comment"></i>{{value.productComCount.replace("有","").replace('人评论',"")}}
+              </span>
+              </div>
+            
+            </div>
+          </div>
+
+  {{/each}}
+</script>
+
+
+  <script src="./lib/zepto/zepto.js"></script>
+  <script src="./lib/mui/js/mui.js"></script>
+  <script src="./lib/arttemplate/template-web.js"></script>
+  <script src="./js/index.js"></script>
+
+</body>
+
+</html>
