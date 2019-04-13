@@ -6,9 +6,12 @@ $(function () {
     window.top.location.href = this.href;
   })
 
-
-
-  const baseURL = 'http://mmb.ittun.com/api/'
+  // 解决a标签无法跳转问题
+  mui('body').on('tap', 'a', function () {
+    window.top.location.href = this.href;
+  });
+  // 进行路径拼接
+  const baseURL = 'http://193.112.55.79:9090/api/'
   // 添加zepto拦截器：它的作用是可以让每个ajax请求都经过这个函数进行处理
   // beforeSend：每次发送ajax请求都必须经过的处理函数
   $.ajaxSettings.beforeSend = function (xhr, obj) {
