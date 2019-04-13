@@ -1,22 +1,26 @@
-/*
- * @Author: zhengwei
- * @Date:   2016-10-24 22:14:54
- * @Last Modified by:   zhengwei
- * @Last Modified time: 2016-10-26 15:17:32
- */
+$(function () {
+    mui('body').on('tap', 'a', function () {
+        window.top.location.href = this.href;
+    });
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+        indicators: false, //是否显示滚动条
+    })
 
-'use strict';
-$(function() {
-    setProductList($('.discount-product'), $.getUrlParam('productid'))
-
-    function setProductList(dom, productid, callback) {        
+    init()
+    // 渲染国内折扣商品详页
+    function init() {
+        var aa = location.search.substring(1)
+        var temp = aa.split('=')[1]
         $.ajax({
-            url: "http://193.112.55.79:9090/api/getdiscountproduct",
-            data: { 'productid': productid },
-            success: function(data) {
-                var html = template("discountProduct",data);
-                dom.html(html);
+            type: 'get',
+            url: 'getdiscountproduct',
+            data: { "productid": temp },
+            dataType: 'json',
+            success: function (result) {
+                var html = template('mmm_xqitem', result)
+                $('.conder').html(html)
             }
         })
     }
-});
+})
