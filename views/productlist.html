@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>商品列表页面</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.css">
+<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css"> 
+  <link rel="stylesheet" href="../styles/productlist.css">
+
+</head>
+
+<body>
+  <div class="layout">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+    <!-- 头部 -->
+    <header id="header">
+      <a href="#" class="logo mui-pull-left"><img src="../images/header_logo.png" alt=""></a>
+      <a href="#" class="app mui-pull-right"><img src="../images/header_app.png" alt=""></a>
+    </header>
+    <!-- 搜索栏 -->
+    <div class="search">
+      <form action="#">
+        <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+        <input type="search" name="" id="" placeholder="请输入要比价的商品">
+        <input type="submit" value="搜索">
+      </form>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav">
+     
+    </div>
+
+    <!-- 主要内容部分 -->
+    <div class="mmb_content">
+      <div class="productList">
+        
+        </div>
+      <!-- 翻页效果 商品操作-->
+    <div class="prodocut-option ">
+      <!-- <input type="button" value="上一页" class="btn btn-default pull-left"> -->
+      <a href="productlist.html?categoryid=0&amp;pageid=1" class="btn btn-default page-prev left">上一页</a>
+      <a href="productlist.html?categoryid=0&amp;pageid=3" class="btn btn-default page-next right">下一页</a>
+      <!-- <input type="button" value="下一页" class="btn btn-default pull-right"> -->
+      <div class="dropdown">
+        <!-- 如果您需要保持链接完整（在浏览器不启用 JavaScript 时有用），请使用 data-target 属性代替 href="#"： -->
+        <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">第1页<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+          <!-- <li><a href="productlist.html?categoryid=0&amp;pageid=1">第1/3页</a></li>
+          <li><a href="productlist.html?categoryid=0&amp;pageid=2">第2/3页</a></li>
+          <li><a href="productlist.html?categoryid=0&amp;pageid=3">第3/3页</a></li> -->
+        </ul>
+      </div>
+    </div>
+    </div>
+    <!-- 底部 -->
+    <footer id="footer">
+      <div class="row">
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+        <a href="#"><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+      </div>
+      <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+      <p>m.manmanbuy.com</p>
+    </footer>
+  </div>
+    </div>
+    </div>
+   <!--动态渲染商品分类名称 --> 
+    <script type="text/template" id="categoryTemp">
+      {{ each result value index}}
+       <span> <a href="../index.html">首页</a></span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <span>全部分类</span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <span>{{value.category}}</span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <a href="javascript:;" class="screen" style="float:right">筛选</a>
+    
+    {{/each}}
+    </script>
+    <!-- 商品列表 -->
+    <script type="text/template" id="categoryListTemp">
+      {{each list value index}}
+    <div class="product">
+          <div class="left">
+            <a href="javascript:;" >
+              {{@value.productImg}}
+             <!--  <img src="../static/images/Thumb_2016060015515937123.png" alt=""> -->
+            </a>
+          </div>
+          <div class="right">
+          
+            <a href="bijia.html?productid={{value.productId}}&category={{list.category}}" class="mui-ellipsis-2">{{value.productName}}</a>
+            <div class="price">{{value.productPrice}}</div>
+            <div>
+              <span>{{value.productQuote}}</span>
+              <span>{{value.productCom}}</span>
+            </div>
+          </div>
+          
+          </div>
+    
+    
+    
+    {{/each }}
+    </script>
+
+
+</body>
+<!-- <script src="../lib/zepto/zepto.js"></script> -->
+<script src='../lib/jquery/jquery.min.js'></script>
+<script src='../lib/mui/js/mui.js'></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!-- <script src="../js/common.js"></script> -->
+<script src="../js/productlist.js"></script>
+
+
+</html>

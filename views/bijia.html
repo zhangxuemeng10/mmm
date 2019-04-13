@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比价页面</title>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../lib/mui/css/mui.css">
+  <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="../styles/bijia.css">
+
+</head>
+
+<body>
+  <div class="layout">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!-- 头部 -->
+        <header id="header">
+          <a href="#" class="logo mui-pull-left"><img src="../static/images/header_logo.png" alt=""></a>
+          <a href="#" class="app mui-pull-right"><img src="../static/images/header_app.png" alt=""></a>
+        </header>
+        <!-- 搜索栏 -->
+        <div class="search">
+          <form action="#">
+            <!-- type=search 当点击搜索框的时候输入法右下角 变成搜索 -->
+            <input type="search" name="" id="" placeholder="请输入要比价的商品">
+            <input type="submit" value="搜索">
+          </form>
+        </div>
+        <!-- 导航栏 -->
+        <div class="nav">
+         
+        </div>
+
+        <!-- 主要内容部分 -->
+        <div class="mmb_content">
+          <div class="product_bijia">
+
+          </div>
+          <div class="note">
+            * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+          </div>
+          <!-- 评价 -->
+          <div class="product_com_title">
+            <div>网友评价</div>
+          </div>
+          <div class="product_com_list">
+           
+            
+          </div>
+
+        </div>
+        <!-- 底部 -->
+        <footer id="footer">
+          <div class="more">
+            <a class="morein" href="comment.aspx?id=473088">查看更多评价</a>
+          </div>
+          <div class="row">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#"><img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">返回顶部</a>
+          </div>
+          <p> <a href="#">手机APP下载</a> <a href="#">慢慢买手机版</a> -- 掌上比价平台</p>
+          <p>m.manmanbuy.com</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+  <script type="text/template" id="navTemp">
+{{ each result value index}}
+   <span> <a href="../index.html">首页</a></span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <span>全部分类</span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <span>{{result.category}} </span>
+      <span class="mui-icon mui-icon-arrowright"></span>
+      <a href="javascript:;" class="screen" style="float:right">筛选</a>
+  
+  {{/each}}
+  
+  </script>
+  <script type="text/template" id="getproductTemp">
+  
+  {{ each result value index}}
+ <div class="product_name">
+              {{value.productName}}
+            </div>
+            <div class="product_img">
+             {{@value.productImg}}
+              <!-- 收藏图标 -->
+              <div class="product_collect">
+                <a href="javascript:setfav(473088);">
+                  <img src="http://www.zuyushop.com/wap/images/sc.jpg" width="39" height="39"></a>
+              </div>
+            </div>
+            <div class="product_tab">
+              <span>比价购买</span>
+              <span>产品参数</span>
+              <span>评论(2322)</span>
+            </div>
+            <div class="plist">
+            {{@value.bjShop}}
+            </div>
+  {{/each}}
+
+  </script>
+  <!-- com -->
+  <script type="text/template" id="comTemp">
+    {{ each result value index}}
+    <div class="com">
+            <div class="com_title">
+              <div class="com_tel">
+                {{value.comName}}
+              </div>
+              <div class= "com_name">
+                <div class='data'>{{value.comTime}}</div>
+                <div class="people">{{value.comFrom}}</div>
+              </div>
+              </div>
+              <div class="com_content">
+                {{value.comContent}}
+              </div>
+           </div>
+  {{/each}}
+  
+  
+  </script>
+
+
+</body>
+<!-- <script src="../lib/zepto/zepto.js"></script> -->
+<script src='../lib/jquery/jquery.min.js'></script>
+<script src='../lib/mui/js/mui.js'></script>
+<script src="../lib/arttemplate/template-web.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+<!-- <script src="../js/common.js"></script> -->
+<script src="../js/bijia.js"></script>
+
+
+</html>
