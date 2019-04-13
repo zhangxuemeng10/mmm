@@ -1,214 +1,237 @@
 @import './reset.less';
 
+
 .layout {
   width: 100vw;
   height: 100vh;
-  max-width: 640px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
 
-#header {
-  width: 100%;
-  height: 50px;
-  background-color: #ff841d;
-  padding: 0px 10px;
-
-  >.logo {
-    img {
-      height: 25px;
-      margin-top: 12px;
-    }
+  .conde {
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 
-  >.app {
-    >img {
-      height: 34px;
-      width: 34px;
-      margin-top: 8px;
-    }
-  }
-}
-
-.search {
-  background-color: #fff;
-
-  >form {
+  .herder {
+    display: flex;
+    border-bottom: 1px solid #444;
     padding: 10px;
-    display: flex;
-
-    >input:nth-of-type(1) {
-      background-color: #eee;
-      flex: 8;
-      color: #ccc;
-      text-align: left;
-      font-size: 13px;
-      border-radius: 17px;
-      margin-bottom: 0px;
-      margin-right: 10px;
-    }
-
-    >input:nth-of-type(2) {
-      width: 63px;
-      height: 34px;
-      background-color: #ff841d;
-      border-radius: 17px;
-      border: 0;
-    }
-  }
-}
-.nav{
-  height: 30px;
-  padding: 0 10px;
-  background-color: #eee;
-  span{
-    font-size:13px;
-    line-height: 30px;
-  }
-  span:nth-of-type(1){
-      >a {
-        color:#333;
-      }
-  }
-  >a{
-    height: 28px;
-    width: 50px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    text-align: center;
-    line-height: 28px;
-    color:#000;
-  }
-}
-
-#footer {
-  background-color: #fff;
-  width: 100%;
-  // padding-top: 20px;
-  // padding-bottom: 150px;
-
-  >.row {
-    height: 30px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    display: flex;
+    background-color: #fff;
+    height: 55px;
 
     >a {
-      height: 30px;
-      color: #000;
-      font-size: 15px;
-      width: 33.3%;
-      line-height: 30px;
+      flex: 3;
+      padding-top: 5px;
+
+      img {
+        width: 90%;
+        display: block;
+        margin: auto;
+      }
+    }
+
+    >.mui-input-row {
+      flex: 6;
+      padding: 0 5px;
+
+      input {
+        height: 100%;
+        border-radius: 30px;
+        margin: 0;
+        font-size: 13px;
+        padding-left: 30px;
+      }
+
+      .mmm_ss {
+        position: relative;
+        left: 4px;
+        top: -30px;
+      }
+    }
+
+    >button {
+      flex: 1;
+      border-radius: 15px;
       text-align: center;
+      line-height: 15px;
+    }
+
+
+  }
+
+  .wsn {
+    position: relative;
+
+    .mui-scroll {
+      list-style: none;
+      background-color: #fff;
+
+      li {
+        display: inline-block;
+        height: 100%;
+        text-align: center;
+
+        a {
+          display: block;
+          overflow: hidden;
+          width: 100%;
+          padding: 3px 8px;
+          font-weight: 600;
+          color: #000;
+        }
+      }
+
+      .active {
+        >a {
+          color: orange;
+        }
+
+        border-bottom: 3px solid red;
+      }
+    }
+  }
+
+  .conder {
+    padding: 10px;
+
+    .mmm_tou {
+      background-color: #fff;
+      padding: 10px;
+
+      img {
+        display: block;
+      }
+
+      >h3 {
+        font-weight: 600;
+      }
+
+      >p {
+        font-size: 15px;
+        color: orange;
+        padding: 10px 0;
+      }
+
+      >span {
+        font-size: 12px;
+        color: #888;
+      }
+
+      .mmm_fl {
+        display: flex;
+        padding: 10px 0;
+
+        >p {
+          flex: 1;
+          font-size: 13px;
+          color: #333;
+        }
+      }
 
       >img {
-        width: 15px;
-        height: 15px;
-        display: inline-block;
+        display: block;
+        margin: auto;
+        margin-bottom: 15px;
+      }
+
+      >a {
+        display: block;
+        width: 80%;
+        margin: auto;
       }
     }
 
-    >a:nth-of-type(-n+2) {
-      border-right: 1px solid #ccc;
-    }
-  }
-
-  >p {
-    text-align: center;
-    font-size: 12px;
-    color: #000;
-
-    >a {
-      color: red;
-    }
-  }
-
-}
-
-.mmb_content {
-  flex:1;
-  display:flex;
-  flex-direction: column;
-  >.productList {
-    
-
-    flex:1;
-    >.product {
-      display:flex;
-      flex-direction: row;
-      border-bottom:1px solid #ccc;
-      padding:10px;
+    >img {
+      width: 90%;
+      display: block;
+      margin: 20px auto;
     }
 
-    .left{
-      flex:2;
-      >a{
-        display:block;
-        width: 100%;
-        height: 100%;
-         text-align: center;
-        img {
-          display: inline-block;
-      }
-       
-       }
-     
-     
+    >.mmm_pl {
+      background-color: #fff;
 
-    }
-    .right {
-       flex:6;
-       display:flex;
-       flex-direction: column;
-       justify-content: space-around;
-    >a {
-      font-size: 15px;
-      color:#333;
+      >form {
+        background-color: #fff;
+        padding: 0 10px;
+        margin-bottom: 50px;
 
-    }
-
-    >.price {
-      color: red;
-      margin:10px 0px 20px;
-    }
-    span {
-      font-size: 12px;
-    }
-
-    }
-    
-  }
-  // fenye
-  >.prodocut-option {
-  
-    position: relative;
-    color:#888;
-    // height: 50px;
-    border-top:1px solid #ccc;
-    margin:0px;
-    padding:10px 15px ;
-    .dropdown {
-      height: 32px;
-      width: 78px;
-      text-align: center;
-      line-height: 32px;
-        position: absolute;
-        left:50%;
-        transform: translateX(-50%);
-        border: 1px solid #ccc;
-        border-radius:5px;
-    >a {
-      color:#333;
-    }
-        > a:hover,a:focus {
-          text-decoration: none;
-          color:#333;
+        >h3 {
+          padding: 6px 0;
         }
+
+        textarea {
+          display: block;
+          width: 90%;
+          margin: 6px auto;
+          font-size: 13px;
+          ;
+        }
+
+        >button {
+          float: right;
+        }
+
+
+      }
+
+      h3 {
+        padding: 6px 10px;
+      }
     }
-    
+
+
   }
 
+  .foor {
+    .mmm_shang {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
 
+      a {
+        color: #222;
+        font-size: 16px;
+        ;
+      }
 
+      margin-bottom: 40px;
+    }
+
+    .mmm_zhong {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+
+      >div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      >div:nth-of-type(2) {
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+    }
+
+    .mmm_xia {
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+
+      >div {
+        a {
+          font-size: 12px;
+          color: red;
+        }
+
+        span:nth-of-type(1) {
+          color: #222;
+        }
+      }
+
+      >p {
+        font-size: 12px;
+      }
+    }
+  }
 }

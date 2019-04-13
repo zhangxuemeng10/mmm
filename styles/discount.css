@@ -108,171 +108,181 @@ ul {
 .layout {
   width: 100vw;
   height: 100vh;
-  max-width: 640px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 }
-#header {
+.layout .conde {
   width: 100%;
-  height: 50px;
-  background-color: #ff841d;
-  padding: 0px 10px;
+  height: 100%;
+  position: relative;
 }
-#header > .logo img {
-  height: 25px;
-  margin-top: 12px;
-}
-#header > .app > img {
-  height: 34px;
-  width: 34px;
-  margin-top: 8px;
-}
-.search {
-  background-color: #fff;
-}
-.search > form {
+.layout .herder {
+  display: flex;
+  border-bottom: 1px solid #444;
   padding: 10px;
-  display: flex;
-}
-.search > form > input:nth-of-type(1) {
-  background-color: #eee;
-  flex: 8;
-  color: #ccc;
-  text-align: left;
-  font-size: 13px;
-  border-radius: 17px;
-  margin-bottom: 0px;
-  margin-right: 10px;
-}
-.search > form > input:nth-of-type(2) {
-  width: 63px;
-  height: 34px;
-  background-color: #ff841d;
-  border-radius: 17px;
-  border: 0;
-}
-.nav {
-  height: 30px;
-  padding: 0 10px;
-  background-color: #eee;
-}
-.nav span {
-  font-size: 13px;
-  line-height: 30px;
-}
-.nav span:nth-of-type(1) > a {
-  color: #333;
-}
-.nav > a {
-  height: 28px;
-  width: 50px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 28px;
-  color: #000;
-}
-#footer {
   background-color: #fff;
-  width: 100%;
+  height: 55px;
 }
-#footer > .row {
-  height: 30px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  display: flex;
+.layout .herder > a {
+  flex: 3;
+  padding-top: 5px;
 }
-#footer > .row > a {
-  height: 30px;
-  color: #000;
-  font-size: 15px;
-  width: 33.3%;
-  line-height: 30px;
-  text-align: center;
-}
-#footer > .row > a > img {
-  width: 15px;
-  height: 15px;
-  display: inline-block;
-}
-#footer > .row > a:nth-of-type(-n+2) {
-  border-right: 1px solid #ccc;
-}
-#footer > p {
-  text-align: center;
-  font-size: 12px;
-  color: #000;
-}
-#footer > p > a {
-  color: red;
-}
-.mmb_content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.mmb_content > .productList {
-  flex: 1;
-}
-.mmb_content > .productList > .product {
-  display: flex;
-  flex-direction: row;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-}
-.mmb_content > .productList .left {
-  flex: 2;
-}
-.mmb_content > .productList .left > a {
+.layout .herder > a img {
+  width: 90%;
   display: block;
-  width: 100%;
+  margin: auto;
+}
+.layout .herder > .mui-input-row {
+  flex: 6;
+  padding: 0 5px;
+}
+.layout .herder > .mui-input-row input {
+  height: 100%;
+  border-radius: 30px;
+  margin: 0;
+  font-size: 13px;
+  padding-left: 30px;
+}
+.layout .herder > .mui-input-row .mmm_ss {
+  position: relative;
+  left: 4px;
+  top: -30px;
+}
+.layout .herder > button {
+  flex: 1;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 15px;
+}
+.layout .wsn {
+  position: relative;
+}
+.layout .wsn .mui-scroll {
+  list-style: none;
+  background-color: #fff;
+}
+.layout .wsn .mui-scroll li {
+  display: inline-block;
   height: 100%;
   text-align: center;
 }
-.mmb_content > .productList .left > a img {
-  display: inline-block;
+.layout .wsn .mui-scroll li a {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 3px 8px;
+  font-weight: 600;
+  color: #000;
 }
-.mmb_content > .productList .right {
-  flex: 6;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.layout .wsn .mui-scroll .active {
+  border-bottom: 3px solid red;
 }
-.mmb_content > .productList .right > a {
+.layout .wsn .mui-scroll .active > a {
+  color: orange;
+}
+.layout .conder {
+  padding: 10px;
+}
+.layout .conder .mmm_tou {
+  background-color: #fff;
+  padding: 10px;
+}
+.layout .conder .mmm_tou img {
+  display: block;
+}
+.layout .conder .mmm_tou > h3 {
+  font-weight: 600;
+}
+.layout .conder .mmm_tou > p {
   font-size: 15px;
-  color: #333;
+  color: orange;
+  padding: 10px 0;
 }
-.mmb_content > .productList .right > .price {
-  color: red;
-  margin: 10px 0px 20px;
-}
-.mmb_content > .productList .right span {
+.layout .conder .mmm_tou > span {
   font-size: 12px;
-}
-.mmb_content > .prodocut-option {
-  position: relative;
   color: #888;
+}
+.layout .conder .mmm_tou .mmm_fl {
+  display: flex;
+  padding: 10px 0;
+}
+.layout .conder .mmm_tou .mmm_fl > p {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+}
+.layout .conder .mmm_tou > img {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.layout .conder .mmm_tou > a {
+  display: block;
+  width: 80%;
+  margin: auto;
+}
+.layout .conder > img {
+  width: 90%;
+  display: block;
+  margin: 20px auto;
+}
+.layout .conder > .mmm_pl {
+  background-color: #fff;
+}
+.layout .conder > .mmm_pl > form {
+  background-color: #fff;
+  padding: 0 10px;
+  margin-bottom: 50px;
+}
+.layout .conder > .mmm_pl > form > h3 {
+  padding: 6px 0;
+}
+.layout .conder > .mmm_pl > form textarea {
+  display: block;
+  width: 90%;
+  margin: 6px auto;
+  font-size: 13px;
+}
+.layout .conder > .mmm_pl > form > button {
+  float: right;
+}
+.layout .conder > .mmm_pl h3 {
+  padding: 6px 10px;
+}
+.layout .foor .mmm_shang {
   border-top: 1px solid #ccc;
-  margin: 0px;
-  padding: 10px 15px ;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 40px;
 }
-.mmb_content > .prodocut-option .dropdown {
-  height: 32px;
-  width: 78px;
+.layout .foor .mmm_shang a {
+  color: #222;
+  font-size: 16px;
+}
+.layout .foor .mmm_zhong {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   text-align: center;
-  line-height: 32px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
-.mmb_content > .prodocut-option .dropdown > a {
-  color: #333;
+.layout .foor .mmm_zhong > div {
+  display: inline-block;
+  padding: 10px;
 }
-.mmb_content > .prodocut-option .dropdown > a:hover,
-.mmb_content > .prodocut-option .dropdown a:focus {
-  text-decoration: none;
-  color: #333;
+.layout .foor .mmm_zhong > div:nth-of-type(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.layout .foor .mmm_xia {
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+.layout .foor .mmm_xia > div a {
+  font-size: 12px;
+  color: red;
+}
+.layout .foor .mmm_xia > div span:nth-of-type(1) {
+  color: #222;
+}
+.layout .foor .mmm_xia > p {
+  font-size: 12px;
 }

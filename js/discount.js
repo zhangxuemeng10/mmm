@@ -18,6 +18,7 @@ $(function () {
             data: { "productid": temp },
             dataType: 'json',
             success: function (result) {
+                console.log(result);
                 var html = template('mmm_xqitem', result)
                 $('.conder').html(html)
             }
