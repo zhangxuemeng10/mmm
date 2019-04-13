@@ -35,8 +35,7 @@ $(function(){
                 
                 var categoryList = panelBody.find('.row > div');
 
-               
-
+          
 
                 var count = categoryList.length % 3 || 3;
                 panelBody.find(".row > div:nth-last-child(-n+" + count + ")").css("border-bottom", "0");
