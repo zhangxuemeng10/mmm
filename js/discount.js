@@ -12,16 +12,28 @@ $(function () {
     function init() {
         var aa = location.search.substring(1)
         var temp = aa.split('=')[1]
-        $.ajax({
-            type: 'get',
-            url: 'getdiscountproduct',
-            data: { "productid": temp },
-            dataType: 'json',
-            success: function (result) {
-                console.log(result);
-                var html = template('mmm_xqitem', result)
-                $('.conder').html(html)
-            }
-        })
+        if (temp < 20) {
+            $.ajax({
+                type: 'get',
+                url: 'getdiscountproduct',
+                data: { "productid": temp },
+                dataType: 'json',
+                success: function (result) {
+                    var html = template('mmm_xqitem', result)
+                    $('.conder').html(html)
+                }
+            })
+        } else {
+            $.ajax({
+                type: 'get',
+                url: 'getmoneyctrlproduct',
+                data: { "productid": temp },
+                dataType: 'json',
+                success: function (result) {
+                    var html = template('mmm_xqitem', result)
+                    $('.conder').html(html)
+                }
+            })
+        }
     }
 })

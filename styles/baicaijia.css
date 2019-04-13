@@ -1,0 +1,252 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.clearfix::before {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.layout {
+  width: 100vw;
+  height: 100vh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.layout .m_header {
+  height: 50px;
+  background-color: #eee;
+}
+.layout .m_header header {
+  background-color: #ff841d;
+}
+.layout .m_header header h1 {
+  color: #fff;
+}
+.layout .m_content {
+  flex: 1;
+  overflow: scroll;
+}
+.layout .paging {
+  z-index: 99;
+}
+.layout #footer {
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  z-index: 999;
+}
+.layout #footer > .row {
+  height: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+.layout #footer > .row > a {
+  height: 30px;
+  color: #000;
+  font-size: 15px;
+  width: 33.3%;
+  line-height: 30px;
+  text-align: center;
+}
+.layout #footer > .row > a > img {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+.layout #footer > .row > a:nth-of-type(-n+2) {
+  border-right: 1px solid #ccc;
+}
+.layout #footer > p {
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+}
+.layout #footer > p > a {
+  color: red;
+}
+.m_content {
+  margin-top: 50px;
+}
+.m_content .mui-scroll .left {
+  overflow: hidden;
+}
+.m_content .mui-scroll .left ul {
+  width: 300%;
+  background-color: #fff;
+  margin-top: 50px;
+  height: 40px;
+  display: flex;
+}
+.m_content .mui-scroll .left ul li {
+  width: 40%;
+  text-align: center;
+  line-height: 40px;
+}
+.m_content .mui-scroll .left ul .active {
+  border-bottom: 2px solid red;
+}
+.m_content .mui-scroll .right {
+  padding: 5px;
+}
+.m_content .mui-scroll .right .rightList ul li {
+  display: flex;
+  background-color: #fff;
+}
+.m_content .mui-scroll .right .rightList ul li .pic {
+  flex: 4;
+}
+.m_content .mui-scroll .right .rightList ul li .pic img {
+  width: 100%;
+  margin: 5px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf {
+  flex: 8;
+  margin: 5px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf .t {
+  font-size: 14px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf .pr {
+  font-size: 14px;
+  color: red;
+}
+.m_content .mui-scroll .right .rightList ul li .inf .pr span {
+  font-size: 18px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf .pr del {
+  color: #333;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .bar {
+  display: flex;
+  color: red;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .bar span {
+  display: block;
+  width: 300%;
+  text-align: center;
+  border: 1px solid red;
+  background-color: pink;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .bar b {
+  margin-left: 50%;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .b {
+  margin-top: 8px;
+  font-size: 14px;
+  display: flex;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .b a {
+  color: #fff;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .b div:nth-of-type(1) {
+  border: 1px dashed red;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .b div:nth-of-type(1) a {
+  color: red;
+  padding: 5px;
+}
+.m_content .mui-scroll .right .rightList ul li .inf > div:nth-of-type(2) .b > div:nth-of-type(2) {
+  border: 1px solid red;
+  background-color: red;
+  border-radius: 8px;
+  margin-left: 10px;
+}

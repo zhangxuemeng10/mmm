@@ -92,7 +92,7 @@ ul {
   list-style: none;
 }
 .clearfix:after {
-  content: "";
+  content: ".";
   display: block;
   clear: both;
   visibility: hidden;

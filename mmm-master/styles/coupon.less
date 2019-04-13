@@ -1,0 +1,109 @@
+.layout {
+    background-color: #fff;
+
+    // 页面顶部栏
+    .mmm_header {
+        background-color: #f4483e;
+
+        >a,
+        h1 {
+            color: #fff;
+        }
+
+        >img {
+            width: 8%;
+            margin-top: 8px;
+        }
+    }
+
+    // 页面主体内容
+    .mmm_content {
+        width: 360px;
+        margin: 55px 0 30px;
+        background-color: #eee;
+
+        >.con_ul {
+            padding: 0;
+            padding-left: .175rem;
+            overflow: hidden;
+
+            >li {
+                float: left;
+                width: 32%;
+                margin: 2px;
+                padding: 5px 20px;
+                border: 1px solid #ccc;
+                list-style: none;
+
+                >a {
+                    >img {
+                        width: 100%;
+                    }
+
+                    >p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        >.nav {
+            margin-top: 20px;
+            padding-left: 5px;
+            border-bottom: 1px solid #ccc;
+            >a{
+                line-height: 30px;
+                font-size: .875rem;
+                color: #000;
+                
+            }
+        }
+    }
+
+    // 页面底部导航
+    .mmm_footer {
+        margin-top: .6rem;
+        background-color: #eee;
+
+        >.nav {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            >button {
+                background-color: #eee;
+                height: 1.875rem;
+                padding: 0 2.4375rem;
+                border: none;
+                border-radius: 0;
+                border-right: 1px solid #ccc;
+            }
+
+            >button:nth-of-type(3) {
+                border-right: none;
+            }
+        }
+
+        >.footer {
+            padding: .9375rem 0;
+            text-align: center;
+
+            >p {
+                font-size: .5625rem;
+
+                >a {
+                    color: red;
+                    font-weight: bold;
+
+                    >i {
+                        color: #000;
+
+                    }
+                }
+            }
+
+            >a {
+                font-size: .5625rem;
+                color: #999;
+            }
+        }
+    }
+}
